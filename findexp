@@ -1,0 +1,9 @@
+#!/bin/bash
+
+tmp="$*"
+arg=${tmp// /.}
+find ./ -iname \*.sol -print | sed '/node_modules/d' | sed '/build/d'| xargs grep -n --color -H $arg ;
+find ./ -iname \*.vue -print | sed '/node_modules/d' | sed '/build/d'| xargs grep -n --color -H $arg ;
+find ./ -iname \*.json -print | sed '/node_modules/d' | sed '/build/d'| xargs grep -n --color -H $arg ;
+find ./ -iname \*.ts -print | sed '/node_modules/d' | sed '/build/d'| xargs grep -n --color -H $arg ;
+find ./ -iname \*.js -print | sed '/node_modules/d' | sed '/build/d'| xargs grep -n --color -H $arg ;
